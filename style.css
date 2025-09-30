@@ -1,0 +1,662 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --white: #fff;
+    --black: #000;
+    --dark-gray: #333;
+    --light-gray: #ccc;
+    --medium-gray: #666;
+    --green: #4CAF50;
+    --font-main: 'Arial', sans-serif;
+    --font-headings: 'Helvetica', sans-serif;
+    --border-radius-large: 30px;
+    --border-radius-small: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- 1. Header and Hero Section --- */
+
+.main-header {
+    width: 100%;
+    background-color: var(--white);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.nav-links a {
+    color: var(--black);
+    margin: 0 20px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--medium-gray);
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icons i {
+    font-size: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    color: var(--black);
+    transition: color 0.3s;
+}
+
+.nav-icons i:hover {
+    color: var(--medium-gray);
+}
+
+.connect-btn {
+    background-color: transparent;
+    border: 2px solid var(--dark-gray);
+    color: var(--dark-gray);
+    padding: 8px 15px;
+    margin-left: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: var(--border-radius-small);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.connect-btn:hover {
+    background-color: var(--dark-gray);
+    color: var(--white);
+}
+
+.hero-section {
+    position: relative;
+    padding: 100px 0;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 0 50px;
+}
+
+.image-left, .image-right {
+    flex-basis: 30%;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-left img, .image-right img {
+    border-radius: 50px;
+}
+
+.text-and-button {
+    flex-basis: 40%;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-family: var(--font-headings);
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: var(--black);
+}
+
+.recycle-icon-text {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+
+.recycle-icon-text::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background-color: var(--green);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.hero-content p {
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+    color: var(--dark-gray);
+}
+
+.scroll-down {
+    text-align: center;
+    margin-top: 50px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll-down i {
+    font-size: 30px;
+    color: var(--black);
+    cursor: pointer;
+}
+
+/* --- How It Works Wrapper for Black Background --- */
+.how-it-works-wrapper {
+    background-color: var(--black);
+    padding: 80px 0; /* Apply padding here to control vertical spacing of the section content */
+}
+
+/* --- 2. How It Works Section (Content inside wrapper) --- */
+
+.how-it-works-section {
+    /* No background-color here, as it's handled by the wrapper */
+    text-align: center;
+    color: var(--white); /* Text color for this section */
+}
+
+.how-it-works-section h2 {
+    font-family: var(--font-headings);
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 50px;
+    color: var(--white); /* Heading color for this section */
+}
+
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    max-width: 1200px; /* Constrain width of steps for better readability */
+    margin: 0 auto;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin: 40px 0;
+    width: 100%;
+    max-width: 900px; /* Individual step width */
+}
+
+/* Default: Text Left, Image Right */
+.step-text {
+    flex: 1;
+    text-align: left;
+}
+
+.step-image {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Center images within their flex item */
+    align-items: center;
+}
+
+/* Reverse for alternating layout */
+.step.reverse {
+    flex-direction: row-reverse; /* Image Left, Text Right */
+}
+
+.step-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--green);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.step p {
+    color: var(--light-gray); /* Lighter text color for readability on black */
+}
+
+.step-image img {
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow on dark background */
+    width: 100%; /* Ensure image fills its container */
+    height: 250px; /* Fixed height for consistency, adjust as needed */
+    object-fit: cover; /* Ensures images cover their area without distortion */
+}
+
+
+/* Dotted line connecting the steps */
+.steps-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 2px;
+    background-image: linear-gradient(to bottom, var(--white) 50%, transparent 50%); /* White line on black background */
+    background-size: 2px 20px;
+    z-index: 0;
+}
+
+/* --- 3. Recovered Metals Section --- */
+
+.recovered-metals-section {
+    background-color: var(--white);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.recovered-metals-heading-image {
+    margin-bottom: 50px; /* Space below the image heading */
+}
+
+.recovered-metals-heading-image img {
+    max-width: 80% !important; /* Adjust max-width as needed for the heading image */
+    margin: 0 auto; /* Center the image */
+}
+
+.metals-diagram-container {
+    position: relative;
+    width: 100%; /* Use full width for responsiveness */
+    max-width: 1200px; /* Limit max width */
+    height: 600px; /* Fixed height, adjust if content overflows */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-image {
+    z-index: 10;
+    position: absolute; /* Position the center image more precisely */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px; /* Adjust size of the central laptop/safe image */
+}
+
+.center-image img {
+    max-width: 100%;
+}
+
+.metal-info {
+    position: absolute;
+    background-color: var(--green);
+    color: var(--black);
+    padding: 15px;
+    border-radius: var(--border-radius-large);
+    width: 250px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Add subtle shadow */
+}
+
+.metal-info h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.metal-info p {
+    font-size: 0.9rem;
+}
+
+/* Specific positioning for each metal info block (adjusted for visual balance) */
+.metal-gold { top: 10%; left: 15%; }
+.metal-silver { top: 35%; left: 5%; }
+.metal-copper { top: 60%; left: 10%; }
+.metal-aluminium { top: 85%; left: 20%; } /* Adjusted for better spacing */
+
+.metal-lead { top: 85%; right: 20%; } /* Adjusted for better spacing */
+.metal-lithium { top: 60%; right: 10%; }
+.metal-nickel { top: 35%; right: 5%; }
+.metal-palladium { top: 10%; right: 15%; }
+
+.icon-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--white);
+    margin-bottom: 10px;
+    display: inline-flex; /* Use flexbox to center content if you put icons inside */
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- 4. Environmental Impact & Testimonials --- */
+
+.environmental-impact-section {
+    background-color: var(--dark-gray);
+    padding: 80px 0;
+    border-radius: var(--border-radius-large);
+    margin: 50px auto;
+    width: 90%;
+    max-width: 1400px;
+    text-align: center;
+}
+
+.eco-friendly-badge {
+    display: inline-block;
+    background-color: var(--green);
+    color: var(--white);
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.environmental-impact-section h2 {
+    font-family: var(--font-headings);
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--white);
+}
+
+.subtitle {
+    max-width: 800px;
+    margin: 20px auto 50px auto;
+    font-size: 1rem;
+    color: var(--light-gray);
+}
+
+.impact-stats {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+
+
+.stat-item {
+    text-align: center;
+}
+
+.percentage {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 1rem;
+    color: var(--light-gray);
+}
+
+.testimonials {
+    background-color: #555;
+    padding: 40px;
+    border-radius: var(--border-radius-large);
+    margin: 50px 40px;
+}
+
+.testimonials h3 {
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.testimonial-slider-controls {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.arrow-btn {
+    background-color: var(--black);
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+.arrow-btn:hover {
+    background-color: #888;
+}
+
+.testimonial-cards-wrapper {
+    display: flex;
+    gap: 20px;
+    overflow-x: hidden;
+}
+
+.testimonial-card {
+    background-color: var(--light-gray);
+    color: var(--black);
+    padding: 30px;
+    border-radius: var(--border-radius-large);
+    min-width: 48%;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.testimonial-card.active {
+    display: block;
+    opacity: 1;
+}
+
+.testimonial-card .quote {
+    font-style: italic;
+    color: var(--dark-gray);
+    margin-bottom: 20px;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+}
+
+.author-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: auto;
+}
+
+.author-info .name {
+    font-weight: bold;
+}
+
+.author-info .title {
+    font-size: 0.9rem;
+    color: var(--medium-gray);
+}
+
+/* --- 5. FAQ and Footer Section --- */
+
+.faq-section {
+    background-color: var(--white);
+    padding: 80px 0;
+}
+
+.faq-container {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.faq-image {
+    flex: 1;
+    text-align: center;
+}
+
+.faq-image h2 {
+    font-family: var(--font-headings);
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--black);
+}
+
+.faq-items {
+    flex: 2;
+}
+
+.faq-item {
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+}
+
+.faq-item:first-child { border-top: 1px solid #ddd; }
+
+.faq-question {
+    background: transparent;
+    border: none;
+    color: var(--black);
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: left;
+    padding: 10px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question i {
+    color: var(--black);
+    transition: transform 0.3s;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding-top: 10px;
+    color: var(--dark-gray);
+}
+
+.faq-item.open .faq-answer {
+    max-height: 200px;
+    overflow: visible;
+}
+
+.faq-item.open .faq-question i {
+    transform: rotate(180deg);
+}
+
+.main-footer {
+    background-color: var(--dark-gray);
+    padding: 50px 0;
+    border-top: 1px solid #444;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #444;
+}
+
+.footer-brand {
+    flex-basis: 30%;
+}
+
+.footer-brand img {
+    height: 40px;
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+    color: var(--light-gray);
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    margin-right: 15px;
+    font-size: 1.5rem;
+    color: var(--white);
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--light-gray);
+}
+
+.footer-links {
+    display: flex;
+    gap: 50px;
+}
+
+.footer-links h4 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--green);
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    font-size: 0.9rem;
+    color: var(--light-gray);
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+.copyright {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 20px;
+}

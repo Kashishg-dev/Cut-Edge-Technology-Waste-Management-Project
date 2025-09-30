@@ -1,0 +1,534 @@
+
+/*
+    ---------------------------------------------------------------------
+    GLOBAL STYLES: These styles apply to the entire website (Header, Footer, etc.)
+    ---------------------------------------------------------------------
+*/
+:root {
+    --green: #4CAF50;
+    --dark-green: #388e3c;
+    --black: #1a1a1a;
+    --white: #ffffff;
+    --light-gray: #f7f7f7;
+    --medium-gray: #666666;
+    --dark-gray: #555555;
+    --border-radius-small: 5px;
+    --border-radius-large: 10px;
+    --font-headings: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-body: 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-body);
+}
+
+body {
+    line-height: 1.6;
+    color: var(--dark-gray);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header & Navigation */
+.main-header {
+    background-color: var(--white);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    font-weight: bold;
+    color: var(--black);
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--green);
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-icons i {
+    font-size: 1.2rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.connect-btn {
+    background-color: var(--green);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: var(--border-radius-small);
+    transition: background-color 0.3s;
+}
+
+.connect-btn:hover {
+    background-color: var(--dark-green);
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 50px 5%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-brand {
+    flex: 2;
+    max-width: 400px;
+}
+
+.footer-brand img {
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.footer-brand p {
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.social-links a {
+    color: var(--white);
+    margin-right: 15px;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--green);
+}
+
+.footer-links {
+    display: flex;
+    flex: 3;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-links h4 {
+    font-family: var(--font-headings);
+    margin-bottom: 15px;
+    color: var(--green);
+    font-size: 1.1rem;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li a {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: var(--green);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #333;
+    margin-top: 40px;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/*
+    ---------------------------------------------------------------------
+    ABOUT US PAGE STYLES
+    ---------------------------------------------------------------------
+*/
+
+/* Hero Section */
+.about-hero-section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    overflow: hidden;
+    background: url(images/about.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.about-hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/aboutus.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+}
+
+.about-hero-content h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.about-hero-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Who We Are & History Sections */
+.about-who-we-are {
+    display: flex;
+    align-items: center;
+    padding: 80px 10%;
+    gap: 60px;
+    background-color: var(--white);
+}
+
+.about-who-we-are .content-left {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex: 1;
+}
+
+.about-who-we-are .content-left img {
+    width: 50%;
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-who-we-are .content-right {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.about-who-we-are .content-right h2 {
+    font-family: var(--font-headings);
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: var(--black);
+}
+
+.about-who-we-are .content-right .stars {
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+.about-who-we-are .content-right p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: var(--dark-gray);
+}
+
+.discover-btn {
+    background-color: var(--green);
+    color: var(--white);
+    padding: 15px 30px;
+    border: none;
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.discover-btn:hover {
+    background-color: var(--dark-green);
+}
+
+.about-history-section {
+    background-color: var(--white);
+    color: var(--dark-gray);
+    padding: 80px 10%;
+}
+
+.history-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 80px;
+}
+
+.history-text {
+    flex: 0.8;
+    text-align: left;
+}
+
+.history-text h2 {
+    font-family: var(--font-headings);
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--black);
+    line-height: 1.2;
+}
+
+.history-description {
+    flex: 1;
+    text-align: left;
+}
+
+.history-description p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: var(--dark-gray);
+}
+
+/* Vision & Mission Section */
+.vision-mission-section {
+    background-color: var(--black);
+    padding: 80px 10%;
+}
+
+.vision-mission-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.vision-card,
+.mission-card {
+    flex: 1;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 40px;
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+    border: 1px solid #333;
+    text-align: left;
+    max-width: 400px;
+}
+
+.vision-mission-image {
+    flex-shrink: 0;
+}
+
+.vision-mission-image img {
+    width: 450px;
+    height: auto;
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1);
+}
+
+.vision-card h2,
+.mission-card h2 {
+    font-family: var(--font-headings);
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--green);
+}
+
+.vision-card p,
+.mission-card p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #ccc;
+}
+
+/* Testimonials Section */
+.what-they-say-section {
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.what-they-say-section .section-title h2 {
+    font-family: var(--font-headings);
+    font-size: 3.5rem;
+    margin-bottom: 50px;
+    color: var(--black);
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.testimonial-card-small {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial-card-small p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--medium-gray);
+}
+
+.testimonial-card-small .author-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.testimonial-card-small .author-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--green);
+}
+
+.testimonial-card-small .author-info p {
+    font-weight: bold;
+    color: var(--black);
+    margin: 0;
+}
+
+.testimonial-card-small .author-info .stars-small {
+    color: #ffd700;
+    font-size: 0.8rem;
+    margin-left: auto;
+}
+
+/*
+    ---------------------------------------------------------------------
+    RESPONSIVE DESIGN (for all pages)
+    ---------------------------------------------------------------------
+*/
+@media (max-width: 1024px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nav-icons {
+        margin-top: 10px;
+    }
+
+    .about-hero-section {
+        height: auto;
+        padding: 80px 5%;
+    }
+    
+    .about-hero-image img {
+        margin-top: 20px;
+    }
+
+    .about-who-we-are {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-who-we-are .content-left {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .about-who-we-are .content-left img {
+        width: 45%;
+    }
+
+    .about-who-we-are .content-right {
+        align-items: center;
+    }
+
+    .history-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .history-text, .history-description {
+        text-align: center;
+    }
+
+    .vision-mission-cards {
+        flex-direction: column;
+    }
+
+    .vision-mission-image img {
+        width: 100%;
+        margin: 20px 0;
+    }
+    
+    .vision-card, .mission-card {
+        background-color: #333;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    .footer-column, .quick-links, .information, .guides {
+        text-align: center;
+    }
+}
